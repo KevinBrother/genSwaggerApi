@@ -1,0 +1,21 @@
+{
+  "name": "genSwaggerApi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+
+    "link": "cd ./binU&npm link"
+  },
+
+  "bin": {
+    "mars-apis-cli": "bin/mars-apis-cli.js"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.23.0"
+  }
+}
