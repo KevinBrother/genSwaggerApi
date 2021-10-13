@@ -9,7 +9,7 @@ const basePath = BasePathEnum.task;
 // js的只能是 ({"pageNum":"","pageSize":""})
 const isTypeScript = false;
 
-async function getApi(path: string) {
+export async function getApi(path: string) {
     
     const {data, status} = await axios.get<Swagger>(url)
         
