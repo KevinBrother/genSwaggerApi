@@ -1,6 +1,6 @@
 {
   "name": "gen-api-by-swagger",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {},
@@ -11,8 +11,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-  },
-  "devDependencies": {
     "axios": "^0.23.0",
     "prompt": "^1.2.0"
   }

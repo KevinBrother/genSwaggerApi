@@ -11,7 +11,7 @@ var schema = {
     properties: {
         path: {
             description: '来！输入你的路径吧！0.0.',
-            pattern: /^[a-zA-Z\s\-]+$/,
+            pattern: /^[a-zA-Z\/\s\-]+$/,
             message: '有空格啥的用不了啊！',
             required: true
         },
