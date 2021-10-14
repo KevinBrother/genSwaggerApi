@@ -4,9 +4,11 @@
 
 
 ### TODO
+- [ ] 使用规则呢, 参考下人家的呢 [anywhere](https://www.npmjs.com/package/anywhere)
+
 - [ ] 测试文件？
 - [ ] 怎么测试bin的呢
-- [ ] 备注功能 + 参数说明
+- [ ] 备注功能 + 参数说明 (jsdoc)
 
 - [ ] 输出美化一下啊
 

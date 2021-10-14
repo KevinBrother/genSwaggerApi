@@ -34,7 +34,7 @@ function genApiString(path: string, swagger: Swagger) {
     const {pathModel, name} = pathObject;
 
     // 3. 更具path对象的parameters是否为dto对象
-    const {params, method} = getParams(pathModel, definitions);
+    const {params, method, summary} = getParams(pathModel, definitions);
 
 
     //  如果不是dto就直接替换模板
@@ -43,6 +43,7 @@ function genApiString(path: string, swagger: Swagger) {
     // 4. 返回字符串
     let temp: Template = {
         basePath,
+        summary,
         name,
         request: 'request',
         url: path,
@@ -110,7 +111,7 @@ function getTemp(template:Template) {
 // reqUpdateTrainNumberPosition = (abc = { lat: '', lon: '', taskId: '' }) => request.get('/bizTask/tms/trainNumber/updateTrainNumberPosition', abc);
 // reqGetNewsList = ({pageNum=1,pageSize=10}) => request.get('/bizTask/index/getNewsListMini',{pageNum,pageSize})
 // listByPage = ({pageNum= "", pageSize = ""}) => request.get('/bizTask/vessel/listByPage', { pageNum, pageSize})
-    let {basePath, name, params, request, url, method } = template;
+    let {basePath, name, params, request, url, method, summary } = template;
     
     // 首字母大写，并拼接req字符串
     name = 'req' + name.charAt(0).toUpperCase() + name.slice(1); 
@@ -133,7 +134,17 @@ function getTemp(template:Template) {
     }
  */
 
-    return `${name} = (params = ${JSON.stringify(params)}) => ${request}.${method}('${basePath}${url}', params)`;
+    /**
+ * 
+ * @param formData
+ * @return {Promise<any>}
+ */
+    return `
+            /**
+             * ${summary} 
+             * @param any
+             */
+             ${name} = (params = ${JSON.stringify(params)}) => ${request}.${method}('${basePath}${url}', params)`;
 }
 
 /**
@@ -146,15 +157,14 @@ function getParams(pathModel: any, definitions: DefineInterface) {
     let params:any = {};
     let method = Object.keys(pathModel)[0] as Method;
 
-    let pathObject = pathModel[method] as PathInterface;
-
-    let parameters = pathObject.parameters;
+    let {parameters, summary} = pathModel[method] as PathInterface;
     let paramsLen = parameters.length;
 
     if(paramsLen === 0) {
         return {
             params,
-            method
+            method,
+            summary
         }
     }
 
@@ -188,7 +198,8 @@ function getParams(pathModel: any, definitions: DefineInterface) {
 
     return {
         params,
-        method
+        method,
+        summary
     }
 }
 

@@ -106,6 +106,7 @@ interface TagInterface {
 // reqGetNewsList = ({pageNum=1,pageSize=10}) => request.get('/bizTask/index/getNewsListMini',{pageNum,pageSize})
 
 export interface Template {
+    summary: string  // TODO 字段类型也需要有jsdoc的生成
     basePath: BasePathEnum
     name: string,
     params: Object | any // TODO 需要额外定义吧,是这部分最复杂，最难的地方

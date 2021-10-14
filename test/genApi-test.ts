@@ -6,5 +6,5 @@ getApi('mber/updateTrainNumberPosition')
 // getApi('/photo/listPlPhoto')
 // getApi('/vessel/listByPage')
 .then(rst => {
-    console.log('-----------------------------',rst);
+    console.log(rst);
 })

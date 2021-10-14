@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // TODO  1. npm run sync 同步数据，写入到本地文件，以后就直接读取本地的
-var prompt_1 = __importDefault(require("prompt"));
-var genApi_1 = require("../genApi");
+const prompt_1 = __importDefault(require("prompt"));
+const genApi_1 = require("../genApi");
 var schema = {
     properties: {
         path: {
@@ -22,9 +22,9 @@ prompt_1.default.start();
 // Get two properties from the user: email, password
 //
 prompt_1.default.get(schema, function (err, result) {
-    var path = result.path;
+    let path = result.path;
     console.log(' path: ' + path);
-    (0, genApi_1.getApi)(path).then(function (rst) {
+    (0, genApi_1.getApi)(path).then(rst => {
         console.log('你要的api 拿去用吧！：', rst);
     });
 });
