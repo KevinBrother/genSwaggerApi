@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // TODO  1. npm run sync 同步数据，写入到本地文件，以后就直接读取本地的
 import prompt from 'prompt';
-import {getApi} from '../genSwagger';
+import {getApi} from '../genApi';
 
 
 var schema = {

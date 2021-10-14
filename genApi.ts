@@ -107,6 +107,7 @@ function getTemp(template:Template) {
     };
  */
 
+// reqUpdateTrainNumberPosition = (abc = { lat: '', lon: '', taskId: '' }) => request.get('/bizTask/tms/trainNumber/updateTrainNumberPosition', abc);
 // reqGetNewsList = ({pageNum=1,pageSize=10}) => request.get('/bizTask/index/getNewsListMini',{pageNum,pageSize})
 // listByPage = ({pageNum= "", pageSize = ""}) => request.get('/bizTask/vessel/listByPage', { pageNum, pageSize})
     let {basePath, name, params, request, url, method } = template;
@@ -114,7 +115,7 @@ function getTemp(template:Template) {
     // 首字母大写，并拼接req字符串
     name = 'req' + name.charAt(0).toUpperCase() + name.slice(1); 
 
-    if(!isTypeScript) {
+/*     if(!isTypeScript) {
         let str = '';
         let keys = '';
         Object.keys(params).forEach(item => {
@@ -129,11 +130,10 @@ function getTemp(template:Template) {
             
             keys += `${item}, `
         })
-    
-        return `${name} = ({${str}}) => ${request}.${method}('${basePath}${url}', {${keys}})`;
-    }else {
-        return `${name} = (params: ${JSON.stringify(params)}) => ${request}.${method}('${basePath}${url}', {params})`;
     }
+ */
+
+    return `${name} = (params = ${JSON.stringify(params)}) => ${request}.${method}('${basePath}${url}', params)`;
 }
 
 /**
@@ -222,11 +222,3 @@ function transformType(type: any) {
         return '';
     }
 }
-
-getApi('mber/updateTrainNumberPosition')
-// getApi('photo/insertTrainNumberPhoto')
-// getApi('/photo/listPlPhoto')
-// getApi('/vessel/listByPage')
-.then(rst => {
-    console.log('-----------------------------',rst);
-})

@@ -1,19 +1,19 @@
 {
-  "name": "genApisBySwagger",
+  "name": "gen-api-by-swagger",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {},
   "bin": {
-    "mars-apis-cli": "bin/mars-apis-cli.js"
+    "gen-api-cli": "dist/bin/gen-api-cli.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "axios": "^0.23.0"
   },
   "devDependencies": {
+    "axios": "^0.23.0",
     "prompt": "^1.2.0"
   }
 }
