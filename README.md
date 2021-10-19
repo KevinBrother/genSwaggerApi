@@ -10,6 +10,13 @@
 - [ ] 怎么测试bin的呢
 - [ ] 备注功能 + 参数说明 (jsdoc)
 
+- [ ] 配置文件的定义 api-config.js 支持
+        - [ ] 路径和请求方式的配置，导出模式 比如export const + fnName 等等 
+        - [ ] 调用的也生成了，让配置中选择，可以不生成
+              reqTradition({taskId: this.taskId}).then(rst => {
+                console.log("rst", rst)
+              })
+
 - [ ] 输出美化一下啊
 
 - [ ] 文件有本地缓存功能

@@ -15,7 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getApi = void 0;
 const axios_1 = __importDefault(require("axios"));
 const types_1 = require("./types");
-const url = 'http://192.168.1.13:8083/task/v2/api-docs';
+// const url = 'http://192.168.1.13:8083/task/v2/api-docs';
+const url = 'http://192.168.1.11:8000/test/api-docs.json';
 const basePath = types_1.BasePathEnum.task;
 // ts环境可以简化的生成 (params:{"pageNum":"","pageSize":""})
 // js的只能是 ({"pageNum":"","pageSize":""})

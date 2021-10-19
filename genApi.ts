@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { Swagger, Template, PathMethodInterface, Method, PathInterface, StructureString, ParamsGetInterface, StructureStringEnum, ParamsPostInterface, KeyMode, DefineInterface, BasePathEnum } from './types';
 
-const url = 'http://192.168.1.13:8083/task/v2/api-docs';
+// const url = 'http://192.168.1.13:8083/task/v2/api-docs';
+const url = 'http://192.168.1.11:8000/test/api-docs.json';
 
 const basePath = BasePathEnum.task;
 
